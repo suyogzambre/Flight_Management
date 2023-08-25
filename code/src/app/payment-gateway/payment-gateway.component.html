@@ -1,0 +1,28 @@
+<div style="display:flex; align-items: center; margin-left: 20px;">
+    <mat-card style="width: 400px; margin-top: 20px" class="card">
+        <mat-card-header style="text-align: center; display:flex; align-items: center; justify-content: center;">
+            <mat-card-title>Payment Gateway</mat-card-title>
+            <mat-card-subtitle>Select the option that best suits you.
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-grid-list cols="1">
+            
+                <mat-grid-tile colspan="1" rowspan="1">
+                    <div style=" display: flex; flex-direction: column;">
+                        <span><b>Fare Cost per passenger : </b> {{this.data["flight-details"].fare}}</span><br>
+                        <span><b>Total passengers : </b> {{this.data["passenger-details"].length}}</span><br>
+                        <span><b>Total Cost : </b> {{ this.data["flight-details"].fare *
+                            this.data["passenger-details"].length }}</span>
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card-content>
+        <mat-card-footer
+            style="text-align: center; display:flex; align-items: center; justify-content: center; margin-bottom: 20px">
+            <button mat-flat-button color="primary" style="width: 200px; height: 50px" (click)="confirmBooking()">
+                <mat-icon>lock</mat-icon> Pay Securely
+            </button>
+        </mat-card-footer>
+    </mat-card>
+</div>
